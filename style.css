@@ -1,0 +1,88 @@
+/*
+Theme Name:     soulmedic Child
+Theme URI: 		http://wedesignthemes.com/themes/dt-soulmedic
+Author: 		the DesignThemes team
+Author URI: 	http://themeforest.net/user/designthemes
+Description:    Child theme for the soulmedic theme
+Template:       soulmedic
+Version:        1.0
+*/
+@import url("../soulmedic/style.css");
+
+body { font-family: 'Quicksand', sans-serif;
+}
+#header-email-first { background-color: #FFF !important; color:blue !important; font-weight: normal; }
+
+#bbar-wrapper { background-color:#FFFFFF !important; }
+#header { background-color:#e6deee !important; }
+#logo {  height:40px; padding-top:10px; padding-left:10%; margin-bottom:7px; width:auto !important; }
+#logo h2 a { margin-top:0px; font-family: 'Yellowtail', cursive; font-size:40pt; font-weight:100; }
+#logo h2 { margin-top:-30px; }
+#main { 
+	background: -webkit-linear-gradient(#e7e0ef, #FFFFFF) !important; /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#e7e0ef, #FFFFFF) !important; /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#e7e0ef, #FFFFFF) !important; /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#e7e0ef, #FFFFFF) !important; /* Standard syntax */
+}
+
+#main-menu { /* width:100%; */ margin-left:150px; }
+#main-menu > ul.menu > li > a { font-size:13px; }
+.breadcrumb h1 { font-size:18px; }
+p.body-content { margin:25px 0px; }
+#slider { 
+		border-top:5px solid; 
+		margin-bottom:0px; 
+		border-color:#664f69 !important; 
+}
+
+.format_text { margin-left:20px; padding: 10px 50px 1px 10px; background-color:#d6d7d6; border-radius:0px 7px 7px 0px; font-size:11pt; letter-spacing:2px; border:solid 2px #027a13; border-width:0px 0px 0px 2px; }
+.format_custom { margin-left:20px; padding: 10px 50px 1px 10px; font-size:11pt; letter-spacing:2px;  }
+.format_header { margin-left:0px; padding: 10px 50px 10px 10px; background-color:#664f69; color:#FFFFFF; border-radius:0px 7px 7px 0px; font-size:11pt; letter-spacing:3px; border:solid 2px #3a1040; border-width:0px 0px 0px 2px; }
+
+.format_text ul { font-size:9pt; }
+#primary { margin-top:0px }
+#secondary { /* margin-top:120px; */ }
+
+.iList li { padding-left:20px; font-size:10pt;  }
+ul.arrow { padding-left:20px; font-size:11pt; font-weight:bold; }
+.widget h3.widgettitle { margin-bottom:0px; }
+
+.quote { font-size:13pt; width:45%; margin-left:25%; margin-top:40px; background-color:#d9f4f1; font-size:11pt; border:solid 2px #027a13; border-width:0px 0px 0px 2px; padding:15px 5px 20px 20px; border-radius:0px 10px 10px 0px; }
+
+.headline_area h2 { font-size:28pt;  }
+#home-tile-container {  margin:0px auto; text-align:center !important; }
+.tile-container { display:inline; width:33%; }
+.tile-image { width:170px; margin:0px 20px; border:solid 2px #664f69; border-width:2px 0px 0px 0px; }
+.widget h3.widgettitle { text-align:center; }
+
+.left-sidebar { float:right; }
+.widget-title { margin:-7px -7px 0px -7px; font-color:#FFF;  }
+.firstLarge { font-weight:bold; font-size:16pt; }
+#text-3, #text-4, #text-6, #text-7  { background-color:#FFF; border-radius:7px; padding:5px; }
+#text-4, #text-7 { margin-top:25px; }
+#text-5 { padding:0px 15px 0px 15px; margin-top:25px; }
+#text-8 { margin-top:25px; }
+
+.body-content { text-indent: 15px; }
+.body-content:first-letter { font-weight:bold; font-size:16pt; }
+
+#bbar-wrapper { background-color:#DEE4E4; border:solid 1px #CCC; border-width:0px 0px 1px 0px; }
+.widgettitle { border-radius:5px 5px 0px 0px; margin:-7px -7px 20px -7px; background-color:#664f69; color:#FFF; padding-top:7px; }
+.textwidget { margin-left:20px; } 
+.textwidget i { margin-left:-20px; }
+.mapImage { background-color:#003399; display:block; width:0px; height:0px }
+div.bioQuote { margin-left:-40px; padding-left:25px; padding-top: 30px; background-image:url('http://kingsnocounseling.com/wp-content/uploads/2015/12/quotationMarksPurpSmallLite.png'); background-repeat:no-repeat; }
+div.innerBio { background-image:url('http://kingsnocounseling.com/wp-content/uploads/2015/12/quotationMarksPurpSmallLite2.png'); background-repeat:no-repeat; background-position:bottom right; padding-bottom:20px; }
+.textwidget { text-align:center;  }
+.textwidget img { border-radius:7px; }
+.widget #searchform input[type="submit"] { border-radius:0px 7px 7px 0px; }
+.sub-menu { z-index:10000; }
+
+/*#content-image-div-long { width:90% !important; text-align:center !important; margin-left:auto !important; margin-right:auto !important; }*/
+.content-image-long { display:block; width:90%; height:auto; margin-left:5%; max-width:790px; border:solid 1px #c9c6c9; }
+
+h1.main_header { font-size:28px; }
+
+@media only screen and (max-width: 500px) {
+   #logo h2 a { font-size: 15pt; }
+}
