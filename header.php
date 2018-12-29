@@ -34,7 +34,21 @@
 	  endif;
 	 #WordPress Default head hook
 	 wp_head();?>
-	 <?php
+	 <script>
+	 	var RC2KEY = '6LfPU34UAAAAAMs4MnMWOx3nBKI0EH6KiDxCJdZA';
+		function reCaptchaVerify(response) {
+			if (response === document.querySelector('.g-recaptcha-response').value) {
+				var hes = document.getElementById('header-email-second');
+				hes.click();
+			}
+		}
+
+		function reCaptchaExpired() {
+			/* do something when it expires */
+		}
+	 </script>
+
+	 <?php 
 		wp_localize_script( 'wp-api', 'wpApiSettings', array(
 			'root' => esc_url_raw( 'https://www.google.com/recaptcha/api/siteverify' ),
 			'nonce' => wp_create_nonce( 'wp_rest' )
@@ -65,15 +79,6 @@
 		#header-captcha::first-child { margin-left:auto }
 		#header-captcha-body { position:absolute; }
 	 </style>
-	 <script>
-		jQuery(document).ready(function($) {
-			console.log('ready'); 
-			$('.recaptcha-checkbox-checkmark').change(function() {
-  				console.log( "Handler for .change called." );
-			});
-
-        })
-	</script>
 </head>
 <?php $body_class_arg  = ( dttheme_option("appearance","layout") === "boxed" ) ? array("boxed") : array(); ?>
 <body <?php body_class( $body_class_arg ); ?>>
@@ -101,26 +106,7 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
 
     if ($response != null && $response->success) { ?>
 		<script>
-			console.log('captcha')
 			jQuery(document).ready(function($) {
-            /*$(".facebook_left").animate({left: "-265" }, 1300 );
-            $(".twitter_left").animate({left: "-265" }, 1300 );
-            $(".gplus_left").animate({left: "-265" }, 1300 );
-            $(".linkedin_left").animate({left: "-265" }, 1300 );
-            $(".email_left").animate({left: "-265" }, 1300 );
-
-            $(".facebook_left").click(function(){
-                window.open("https://www.facebook.com/ConsumerRightsLawFirm", 'fb');
-            });
-            $(".twitter_left").click(function(){
-                window.open("https://twitter.com/Crlfconsumerlaw", 'tw');
-            });
-            $(".gplus_left").click(function(){
-                window.open("https://www.google.com/search?q=consumer+rights+law+firm+pllc&oq=consumer+rights+law+firm+pl&aqs=chrome.0.0j69i60l3j69i57j69i59.4915j0j4&sourceid=chrome&ie=UTF-8", 'goog');
-            });
-            $(".linkedin_left").click(function(){
-                window.open("https://www.linkedin.com/in/derek-depetrillo-50a9246/", 'linkedin');
-            });*/
 			$("#header-email-link").show();
 			$("#header-email-first").hide();
 			$("#header-email-second").hide();
@@ -137,17 +123,8 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
 		<?
 	}
 	else
-		print_r($response);
 		?>
 		<script>
-			/*console.log('captcha failed')
-			jQuery(document).ready(function($) {
-			$("#header-email-link").hide();
-			$("#header-email-first").hide();
-			$("#header-email-second").show();
-			$("#header-captcha-body").show();
-			$("#header-captcha-error").show(); */ 
-        })
 		</script>
 		<?
 }

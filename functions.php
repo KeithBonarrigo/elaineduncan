@@ -2,16 +2,21 @@
 if (!session_id()) {
     session_start();
 }
+// Remove WP Version From Styles	
+add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
+// Remove WP Version From Scripts
+add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999 );
+
+// Function to remove version numbers
+function sdt_remove_ver_css_js( $src ) {
+	if ( strpos( $src, 'ver=' ) )
+		$src = remove_query_arg( 'ver', $src );
+	return $src;
+}
 //for google captcha
 wp_register_script('google-captcha', 'https://www.google.com/recaptcha/api.js', array(), false, false);
 wp_enqueue_script('google-captcha');
-
 wp_enqueue_script( 'api-handler', 'https://counselinginbothell.com/wp-content/themes/soulmedic-child/js/google-captcha-api.js', [ 'jquery', 'wp-api' ], '1.0', false );
-
-/*add_action( 'wp_enqueue_scripts', function() {
-	// Set dependency to wp-api, which has nonce and endpoint root.
-	wp_enqueue_script( 'api-handler', 'https://counselinginbothell.com/wp-content/themes/soulmedic-child/js/google-captcha-api.js', [ 'jquery', 'wp-api' ], '1.0', true );
-  } );*/
 
 /**
  * Register our sidebars and widgetized areas.
